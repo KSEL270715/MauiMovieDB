@@ -71,6 +71,7 @@
 	  <None Remove="Resources\Fonts\fa-solid-900.ttf" />
 	  <None Remove="Resources\AppResources.en-US" />
 	  <None Remove="Resources\AppResources.en" />
+	  <None Remove="ScreenShots\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Services\" />
@@ -80,6 +81,7 @@
 	  <Folder Include="Utils\" />
 	  <Folder Include="Models\" />
 	  <Folder Include="Converters\" />
+	  <Folder Include="ScreenShots\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\.DS_Store" />
