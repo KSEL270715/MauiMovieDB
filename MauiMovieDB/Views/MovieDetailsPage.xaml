@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiMovieDB.Views.MovieDetailsPage"
+    xmlns:converter="clr-namespace:MauiMovieDB.Converters"
+    Title="MovieDetails"
+    BackgroundColor="#202020">
+    <ContentPage.Resources>
+        <converter:PercentageConverter
+            x:Key="percentageConverter" />
+
+    </ContentPage.Resources>
+    <Grid
+        VerticalOptions="FillAndExpand"
+        BackgroundColor="#202020"
+        RowDefinitions="*,50">
+        <ScrollView>
+            <StackLayout
+                HeightRequest="1200"
+                Orientation="Vertical"
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="#202020"
+                Spacing="10">
+                <Image
+                    Source="{Binding MovieBackdropPath}"
+                    Aspect="AspectFill"
+                    WidthRequest="400"
+                    HeightRequest="250" />
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    TextColor="#FFFFFF"
+                    FontSize="20">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span
+                                Text="{Binding Title}" />
+                            <Span
+                                Text="(" />
+                            <Span
+                                Text="{Binding ReleasedYearMovie}" />
+                            <Span
+                                Text=")" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="FillAndExpand"
+                    Spacing="15">
+
+                    <Grid
+                        HorizontalOptions="EndAndExpand">
+                        <Ellipse
+                            Grid.Row="0"
+                            Stroke="Green"
+                            BackgroundColor="Transparent"
+                            StrokeThickness="4"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            HorizontalOptions="Start" />
+                        <Label
+                            Margin="10,0,0,0"
+                            Grid.Row="0"
+                            HorizontalOptions="Start"
+                            TextColor="#FFFFFF"
+                            Text="{Binding RatingPercentage,Converter={StaticResource percentageConverter}}"
+                            VerticalOptions="Center" />
+                    </Grid>
+                    <Label
+                        Text="User Score"
+                        TextColor="#FFFFFF"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="CenterAndExpand" />
+                    <BoxView
+                        Margin="0,0,45,0"
+                        Color="#FFFFFF"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Gray"
+                        WidthRequest="1"
+                        HeightRequest="30" />
+                    <Label
+                        Margin="0,0,10,0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontFamily="FA-S"
+                        TextColor="#FFFFFF"
+                        Text="&#xf04b;" />
+                    <Label
+                        Margin="0,0,10,0"
+                        Text="Play Trailer"
+                        TextColor="#FFFFFF"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout
+                    Padding="0,10,0,10"
+                    Orientation="Vertical"
+                    BackgroundColor="#1c1c1c">
+                    <Grid
+                        HorizontalOptions="CenterAndExpand">
+                        <Ellipse
+                            Grid.Row="0"
+                            Stroke="Gray"
+                            BackgroundColor="Transparent"
+                            StrokeThickness="2"
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            HorizontalOptions="Start" />
+                        <Label
+                            Margin="10,0,0,0"
+                            Grid.Row="0"
+                            HorizontalOptions="Start"
+                            TextColor="#FFFFFF"
+                            Text="A"
+                            VerticalOptions="Center">
+                            <Label.Triggers>
+                                <DataTrigger
+                                    TargetType="Label"
+                                    Binding="{Binding IsAdult}"
+                                    Value="True">
+                                    <Setter
+                                        Property="Text"
+                                        Value="A" />
+                                </DataTrigger>
+                                <DataTrigger
+                                    TargetType="Label"
+                                    Binding="{Binding IsAdult}"
+                                    Value="False">
+                                    <Setter
+                                        Property="Text"
+                                        Value="U" />
+                                </DataTrigger>
+                            </Label.Triggers>
+
+                        </Label>
+
+                    </Grid>
+                    <Label
+                        Margin="0,0,10,0"
+                        Text="{Binding Genres}"
+                        TextColor="#FFFFFF"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <Label
+                    Margin="10,0,0,0"
+                    Text="{Binding Tagline}"
+                    FontAttributes="Italic"
+                    TextColor="Gray"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Margin="10,0,0,0"
+                    Text="Overview"
+                    FontAttributes="Italic"
+                    TextColor="#FFFFFF"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Margin="10,0,0,0"
+                    Text="{Binding Overview}"
+                    FontAttributes="Italic"
+                    LineBreakMode="WordWrap"
+                    HeightRequest="100"
+                    TextColor="#FFFFFF"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Margin="10,0,0,0"
+                    Text="{Binding CollectionName}"
+                    TextColor="#FFFFFF"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Margin="10,0,0,0"
+                    Text="Creator"
+                    TextColor="#FFFFFF"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+                <StackLayout
+                    Orientation="Vertical"
+                    BackgroundColor="#FFFFFF">
+                    <Label
+                        Margin="10,0,0,0"
+                        Text="Series Cast"
+                        TextColor="#FFFFFF"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="CenterAndExpand" />
+                    <CarouselView
+                        HeightRequest="250"
+                        WidthRequest="350"
+                        VerticalOptions="End"
+                        ItemsSource="{Binding CastList}">
+                        <CarouselView.ItemsLayout>
+                            <LinearItemsLayout
+                                Orientation="Horizontal"
+                                ItemSpacing="10" />
+                        </CarouselView.ItemsLayout>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout
+                                    BackgroundColor="AliceBlue"
+                                    WidthRequest="150"
+                                    Spacing="5">
+                                    <Frame
+                                        BackgroundColor="#FFFFFF"
+                                        BorderColor="Gray"
+                                        Margin="8"
+                                        HasShadow="True"
+                                        HeightRequest="250"
+                                        WidthRequest="150"
+                                        CornerRadius="20"
+                                        VerticalOptions="CenterAndExpand">
+                                        <StackLayout>
+                                            <Image
+                                                HeightRequest="150"
+                                                WidthRequest="130"
+                                                Aspect="AspectFill"
+                                                Source="{Binding CastProfilePath,TargetNullValue=login.png}" />
+                                            <Label
+                                                Text="{Binding Name}"
+                                                FontSize="20"
+                                                FontAttributes="Bold"
+                                                HorizontalTextAlignment="Center" />
+                                            <Label
+                                                Text="{Binding OriginalName}"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalTextAlignment="Center" />
+                                            <Label
+                                                Text="{Binding Character}"
+                                                FontSize="12"
+                                                FontAttributes="Bold"
+                                                HorizontalTextAlignment="Center" />
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+        <Grid
+            Margin="0,0,0,-50"
+            VerticalOptions="EndAndExpand"
+            HeightRequest="50"
+            ColumnDefinitions="25*,25*,25*,25*"
+            BackgroundColor="#345066">
+            <Label
+                Grid.Column="0"
+                Margin="0,0,10,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontFamily="FA-S"
+                TextColor="#FFFFFF"
+                Text="&#xf03a;" />
+            <Label
+                Grid.Column="1"
+                Margin="0,0,10,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontFamily="FA-S"
+                TextColor="#FFFFFF"
+                Text="&#xf004;" />
+            <Label
+                Grid.Column="2"
+                Margin="0,0,10,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontFamily="FA-S"
+                TextColor="#FFFFFF"
+                Text="&#xf097;" />
+            <Label
+                Grid.Column="3"
+                Margin="0,0,10,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontFamily="FA-S"
+                TextColor="#FFFFFF"
+                Text="&#xf006;">
+                <Label.Triggers>
+                    <DataTrigger
+                        TargetType="Label"
+                        Binding="{Binding IsFavourite}"
+                        Value="True">
+                        <Setter
+                            Property="TextColor"
+                            Value="Orange" />
+                    </DataTrigger>
+                    <DataTrigger
+                        TargetType="Label"
+                        Binding="{Binding IsFavourite}"
+                        Value="False">
+                        <Setter
+                            Property="TextColor"
+                            Value="#FFFFFF" />
+                    </DataTrigger>
+                </Label.Triggers>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding MarkFavouriteCommand}"
+                        CommandParameter="{Binding ID}"></TapGestureRecognizer>
+
+                </Label.GestureRecognizers>
+
+            </Label>
+
+        </Grid>
+    </Grid>
+
+</ContentPage>

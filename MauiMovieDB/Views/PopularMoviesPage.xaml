@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiMovieDB.Views.PopularMoviesPage"
+    xmlns:converters="clr-namespace:MauiMovieDB.Converters"
+    xmlns:viewModels="clr-namespace:MauiMovieDB.ViewModels"
+    Title="Popular"
+    BackgroundColor="#202020">
+    <ContentPage.Resources>
+        <converters:ImagePathConverter
+            x:Key="imagePathConverter" />
+
+    </ContentPage.Resources>
+    <Grid
+        BackgroundColor="#202020">
+        <CollectionView
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            ItemsSource="{Binding ListMovieList}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout
+                    Orientation="Vertical"
+                    Span="2"
+                    HorizontalItemSpacing="10"
+                    VerticalItemSpacing="10" />
+
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        BackgroundColor="Transparent"
+                        WidthRequest="160"
+                        HeightRequest="230"
+                        BorderColor="Gray"
+                        CornerRadius="10">
+                        <Grid
+                            RowDefinitions="*,20">
+                            <Image
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Source="{Binding MoviePosterPath}"
+                                HeightRequest="180"
+                                WidthRequest="150"
+                                Aspect="AspectFill" />
+                            <Label
+                                Margin="10,30,0,0"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                WidthRequest="120"
+                                HeightRequest="20"
+                                FontAttributes="Bold"
+                                Text="{Binding Title}"
+                                TextColor="#FFFFFF"
+                                FontSize="16"
+                                HorizontalOptions="CenterAndExpand"
+                                LineBreakMode="WordWrap"
+                                VerticalOptions="CenterAndExpand" />
+                            <Label
+                                 Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="0,0,0,-10"
+                                HorizontalOptions="End"
+                                VerticalOptions="End"
+                                FontFamily="FA-S"
+                                TextColor="#FFFFFF"
+                                Text="&#xf006;">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        TargetType="Label"
+                                        Binding="{Binding Favourite}"
+                                        Value="True">
+                                        <Setter
+                                            Property="TextColor"
+                                            Value="Orange" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        TargetType="Label"
+                                        Binding="{Binding Favourite}"
+                                        Value="False">
+                                        <Setter
+                                            Property="TextColor"
+                                            Value="#FFFFFF" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Frame.Triggers>
+                            <DataTrigger
+                                TargetType="Frame"
+                                Binding="{Binding Favourite}"
+                                Value="True">
+                                <Setter
+                                    Property="BorderColor"
+                                    Value="Orange" />
+                            </DataTrigger>
+                            <DataTrigger
+                                TargetType="Frame"
+                                Binding="{Binding Favourite}"
+                                Value="False">
+                                <Setter
+                                    Property="BorderColor"
+                                    Value="Gray" />
+                            </DataTrigger>
+                        </Frame.Triggers>
+                    </Frame>
+
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

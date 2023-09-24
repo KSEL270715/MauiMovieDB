@@ -1,0 +1,77 @@
+﻿<Properties StartupConfiguration="{E1654CF1-CF3C-4686-B553-D4273A6086F0}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.ADF79C8A-0489-4DE9-AAE1-C151A5CEE91E" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/kalaiselvan/Projects/MauiMovieDB/MauiMovieDB/Views/MovieDetailsPage.xaml.cs" relfile="MauiMovieDB/Views/MovieDetailsPage.xaml.cs" line="17" column="1" />
+      <Breakpoint file="/Users/kalaiselvan/Projects/MauiMovieDB/MauiMovieDB/Views/MovieDetailsPage.xaml.cs" relfile="MauiMovieDB/Views/MovieDetailsPage.xaml.cs" line="21" column="1" />
+      <Breakpoint file="/Users/kalaiselvan/Projects/MauiMovieDB/MauiMovieDB/Views/MovieDetailsPage.xaml.cs" relfile="MauiMovieDB/Views/MovieDetailsPage.xaml.cs" line="23" column="1" />
+      <Breakpoint file="/Users/kalaiselvan/Projects/MauiMovieDB/MauiMovieDB/Views/MovieDetailsPage.xaml.cs" relfile="MauiMovieDB/Views/MovieDetailsPage.xaml.cs" line="22" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.MauiMovieDB PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.ADF79C8A-0489-4DE9-AAE1-C151A5CEE91E" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MauiMovieDB/Views/MovieDetailsPage.xaml.cs">
+    <Files>
+      <File FileName="MauiMovieDB/MainPage.xaml.cs" Line="18" Column="7" />
+      <File FileName="MauiMovieDB/MainPage.xaml" />
+      <File FileName="MauiMovieDB/Services/LoginService.cs" Line="12" Column="1" />
+      <File FileName="MauiMovieDB/Utils/AppConstants.cs" Line="12" Column="29" />
+      <File FileName="MauiMovieDB/Views/LoginPage.xaml" Line="1" Column="1" />
+      <File FileName="MauiMovieDB/ViewModels/LoginViewModel.cs" Line="10" Column="43" />
+      <File FileName="MauiMovieDB/ViewModels/NotifyableObject.cs" />
+      <File FileName="MauiMovieDB/Interfaces/INavigationService.cs" Line="6" Column="17" />
+      <File FileName="MauiMovieDB/Services/NavigationService.cs" Line="28" Column="67" />
+      <File FileName="MauiMovieDB/ViewModels/BaseViewModel.cs" Line="4" Column="27" />
+      <File FileName="MauiMovieDB/Views/DashboardPage.xaml" Line="7" Column="51" />
+      <File FileName="MauiMovieDB/ViewModels/DashboardViewModel.cs" Line="17" Column="1" />
+      <File FileName="MauiMovieDB/App.xaml.cs" Line="14" Column="30" />
+      <File FileName="MauiMovieDB/MauiProgram.cs" Line="37" Column="57" />
+      <File FileName="MauiMovieDB/Platforms/iOS/Program.cs" Line="13" Column="1" />
+      <File FileName="MauiMovieDB/ViewModels/PopularMoviesViewModel.cs" Line="46" Column="1" />
+      <File FileName="MauiMovieDB/ViewModels/TrendingMoviesViewModel.cs" Line="31" Column="16" />
+      <File FileName="MauiMovieDB/Views/PopularMoviesPage.xaml" Line="55" Column="51" />
+      <File FileName="MauiMovieDB/Views/TrendingMoviesPage.xaml" Line="50" Column="65" />
+      <File FileName="MauiMovieDB/Views/DashboardPage.xaml.cs" Line="10" Column="1" />
+      <File FileName="MauiMovieDB/Models/MovieList.cs" Line="57" Column="10" />
+      <File FileName="MauiMovieDB/Views/PopularMoviesPage.xaml.cs" Line="17" Column="31" />
+      <File FileName="MauiMovieDB/Views/TrendingMoviesPage.xaml.cs" Line="12" Column="9" />
+      <File FileName="MauiMovieDB/Converters/ImagePathConverter.cs" Line="16" Column="84" />
+      <File FileName="MauiMovieDB/ViewModels/MovieDetailsViewModel.cs" Line="8" Column="18" />
+      <File FileName="MauiMovieDB/Models/MovieDetails.cs" Line="121" Column="9" />
+      <File FileName="MauiMovieDB/Views/MovieDetailsPage.xaml" Line="19" Column="55" />
+      <File FileName="MauiMovieDB/Views/MovieDetailsPage.xaml.cs" Line="14" Column="42" />
+      <File FileName="MauiMovieDB/Views/LoginPage.xaml.cs" Line="12" Column="42" />
+      <File FileName="MauiMovieDB/Interfaces/IAPIService.cs" Line="9" Column="25" />
+      <File FileName="MauiMovieDB/Services/APIService.cs" Line="32" Column="1" />
+      <File FileName="MauiMovieDB/Models/LoginModel.cs" Line="12" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MauiMovieDB" expanded="True">
+            <Node name="MauiMovieDB" expanded="True">
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Platforms" expanded="True">
+                <Node name="iOS" expanded="True" />
+              </Node>
+              <Node name="Services" expanded="True" />
+              <Node name="Utils" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="DashboardPage.xaml" expanded="True" />
+                <Node name="MovieDetailsPage.xaml" expanded="True">
+                  <Node name="MovieDetailsPage.xaml.cs" selected="True" />
+                </Node>
+                <Node name="PopularMoviesPage.xaml" expanded="True" />
+                <Node name="TrendingMoviesPage.xaml" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
