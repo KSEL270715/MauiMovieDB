@@ -219,7 +219,7 @@
                                                 HeightRequest="150"
                                                 WidthRequest="130"
                                                 Aspect="AspectFill"
-                                                Source="{Binding CastProfilePath,TargetNullValue=login.png}" />
+                                                Source="{Binding CastProfilePath,TargetNullValue=pic.png}" />
                                             <Label
                                                 Text="{Binding Name}"
                                                 FontSize="20"
