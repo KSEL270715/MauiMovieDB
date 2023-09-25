@@ -34,6 +34,7 @@ namespace MauiMovieDB.ViewModels
             _navigationService = navigationService;
             _securityService = securityService;
             SelectPopularMovieCommand = new Command<object>(async (o) => { await ExecuteSelectPopularMovieCommand(o); });
+
         }
 
         public async override Task LoadDetails(object param = null)
@@ -66,7 +67,10 @@ namespace MauiMovieDB.ViewModels
         private async Task ExecuteSelectPopularMovieCommand(object MovieListParam)
         {
             MovieList movieList = MovieListParam as MovieList;
-            await _navigationService.NavigateTo("MovieDetailsViewModel", movieList.Id);
+            Dictionary<string, object> keyValuePairs = new Dictionary<string, object>();
+            keyValuePairs.Add("id", movieList.Id);
+            keyValuePairs.Add("fav", movieList.Favourite);
+            await _navigationService.NavigateTo("MovieDetailsViewModel", keyValuePairs);
         }
     }
 }

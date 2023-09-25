@@ -5,7 +5,7 @@
     x:Class="MauiMovieDB.Views.MovieDetailsPage"
     xmlns:converter="clr-namespace:MauiMovieDB.Converters"
     Title="MovieDetails"
-    BackgroundColor="#202020">
+    BackgroundColor="{DynamicResource BackgroundColor}">
     <ContentPage.Resources>
         <converter:PercentageConverter
             x:Key="percentageConverter" />
@@ -13,14 +13,14 @@
     </ContentPage.Resources>
     <Grid
         VerticalOptions="FillAndExpand"
-        BackgroundColor="#202020"
+        BackgroundColor="{DynamicResource BackgroundColor}"
         RowDefinitions="*,50">
         <ScrollView>
             <StackLayout
                 HeightRequest="1200"
                 Orientation="Vertical"
                 VerticalOptions="FillAndExpand"
-                BackgroundColor="#202020"
+                BackgroundColor="{DynamicResource BackgroundColor}"
                 Spacing="10">
                 <Image
                     Source="{Binding MovieBackdropPath}"
@@ -30,9 +30,7 @@
                 <Label
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="Center"
-                    FontAttributes="Bold"
-                    TextColor="#FFFFFF"
-                    FontSize="20">
+                    Style="{DynamicResource DetailsLabel}">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span
@@ -55,8 +53,8 @@
                         HorizontalOptions="EndAndExpand">
                         <Ellipse
                             Grid.Row="0"
-                            Stroke="Green"
-                            BackgroundColor="Transparent"
+                            Stroke="{DynamicResource ProgressbarColor}"
+                            BackgroundColor="{DynamicResource Transparent}"
                             StrokeThickness="4"
                             WidthRequest="50"
                             HeightRequest="50"
@@ -65,18 +63,18 @@
                             Margin="10,0,0,0"
                             Grid.Row="0"
                             HorizontalOptions="Start"
-                            TextColor="#FFFFFF"
+                            Style="{DynamicResource DetailsRowLabel}"
                             Text="{Binding RatingPercentage,Converter={StaticResource percentageConverter}}"
                             VerticalOptions="Center" />
                     </Grid>
                     <Label
                         Text="User Score"
-                        TextColor="#FFFFFF"
+                        Style="{DynamicResource DetailsRowLabel}"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="CenterAndExpand" />
                     <BoxView
                         Margin="0,0,45,0"
-                        Color="#FFFFFF"
+                        Color="{DynamicResource WhiteColor}"
                         HorizontalOptions="Start"
                         BackgroundColor="Gray"
                         WidthRequest="1"
@@ -85,26 +83,26 @@
                         Margin="0,0,10,0"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        FontFamily="FA-S"
-                        TextColor="#FFFFFF"
+                        Style="{DynamicResource TtfLabel}"
                         Text="&#xf04b;" />
                     <Label
-                        Margin="0,0,10,0"
+                        Margin="0,0,5,0"
                         Text="Play Trailer"
-                        TextColor="#FFFFFF"
+                        Style="{DynamicResource DetailsRowLabel}"
+                        FontSize="14"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="CenterAndExpand" />
                 </StackLayout>
                 <StackLayout
                     Padding="0,10,0,10"
                     Orientation="Vertical"
-                    BackgroundColor="#1c1c1c">
+                    BackgroundColor="{DynamicResource MovieDetailsBackground}">
                     <Grid
                         HorizontalOptions="CenterAndExpand">
                         <Ellipse
                             Grid.Row="0"
-                            Stroke="Gray"
-                            BackgroundColor="Transparent"
+                            Stroke="{DynamicResource GrayBorder}"
+                            BackgroundColor="{DynamicResource Transparent}"
                             StrokeThickness="2"
                             WidthRequest="30"
                             HeightRequest="30"
@@ -113,7 +111,7 @@
                             Margin="10,0,0,0"
                             Grid.Row="0"
                             HorizontalOptions="Start"
-                            TextColor="#FFFFFF"
+                            TextColor="{DynamicResource WhiteColor}"
                             Text="A"
                             VerticalOptions="Center">
                             <Label.Triggers>
@@ -141,7 +139,7 @@
                     <Label
                         Margin="0,0,10,0"
                         Text="{Binding Genres}"
-                        TextColor="#FFFFFF"
+                        TextColor="{DynamicResource WhiteColor}"
                         HorizontalOptions="CenterAndExpand"
                         VerticalOptions="CenterAndExpand" />
                 </StackLayout>
@@ -149,14 +147,14 @@
                     Margin="10,0,0,0"
                     Text="{Binding Tagline}"
                     FontAttributes="Italic"
-                    TextColor="Gray"
+                    TextColor="{DynamicResource GrayBorder}"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="CenterAndExpand" />
                 <Label
                     Margin="10,0,0,0"
                     Text="Overview"
                     FontAttributes="Italic"
-                    TextColor="#FFFFFF"
+                    TextColor="{DynamicResource WhiteColor}"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="CenterAndExpand" />
                 <Label
@@ -165,19 +163,19 @@
                     FontAttributes="Italic"
                     LineBreakMode="WordWrap"
                     HeightRequest="100"
-                    TextColor="#FFFFFF"
+                    TextColor="{DynamicResource WhiteColor}"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="CenterAndExpand" />
                 <Label
                     Margin="10,0,0,0"
                     Text="{Binding CollectionName}"
-                    TextColor="#FFFFFF"
+                    TextColor="{DynamicResource WhiteColor}"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="CenterAndExpand" />
                 <Label
                     Margin="10,0,0,0"
                     Text="Creator"
-                    TextColor="#FFFFFF"
+                    TextColor="{DynamicResource WhiteColor}"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="CenterAndExpand" />
                 <StackLayout
@@ -186,7 +184,7 @@
                     <Label
                         Margin="10,0,0,0"
                         Text="Series Cast"
-                        TextColor="#FFFFFF"
+                        TextColor="{DynamicResource WhiteColor}"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="CenterAndExpand" />
                     <CarouselView
@@ -206,8 +204,8 @@
                                     WidthRequest="150"
                                     Spacing="5">
                                     <Frame
-                                        BackgroundColor="#FFFFFF"
-                                        BorderColor="Gray"
+                                        BackgroundColor="{DynamicResource WhiteColor}"
+                                        BorderColor="{DynamicResource GrayBorder}"
                                         Margin="8"
                                         HasShadow="True"
                                         HeightRequest="250"
@@ -257,32 +255,28 @@
                 Margin="0,0,10,0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                FontFamily="FA-S"
-                TextColor="#FFFFFF"
+                Style="{DynamicResource TtfLabel}"
                 Text="&#xf03a;" />
             <Label
                 Grid.Column="1"
                 Margin="0,0,10,0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                FontFamily="FA-S"
-                TextColor="#FFFFFF"
+                Style="{DynamicResource TtfLabel}"
                 Text="&#xf004;" />
             <Label
                 Grid.Column="2"
                 Margin="0,0,10,0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                FontFamily="FA-S"
-                TextColor="#FFFFFF"
+                Style="{DynamicResource TtfLabel}"
                 Text="&#xf097;" />
             <Label
                 Grid.Column="3"
                 Margin="0,0,10,0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                FontFamily="FA-S"
-                TextColor="#FFFFFF"
+                Style="{DynamicResource TtfLabel}"
                 Text="&#xf006;">
                 <Label.Triggers>
                     <DataTrigger
@@ -299,7 +293,7 @@
                         Value="False">
                         <Setter
                             Property="TextColor"
-                            Value="#FFFFFF" />
+                            Value="White" />
                     </DataTrigger>
                 </Label.Triggers>
                 <Label.GestureRecognizers>

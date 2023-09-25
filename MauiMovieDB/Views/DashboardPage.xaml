@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MauiMovieDB.Views.DashboardPage"
     xmlns:local="clr-namespace:MauiMovieDB.Views"
-    Title="DashboardPage" BackgroundColor="#202020" BarBackgroundColor="#202020" BarTextColor="#FFFFFF">
-    <local:PopularMoviesPage BackgroundColor="#202020" />
-    <local:TrendingMoviesPage BackgroundColor="#202020" />
+    Title="DashboardPage" BackgroundColor="{DynamicResource BackgroundColor}" BarBackgroundColor="{DynamicResource BackgroundColor}"
+    BarTextColor="{DynamicResource WhiteColor}">
+    <local:PopularMoviesPage BackgroundColor="{DynamicResource BackgroundColor}" />
+    <local:TrendingMoviesPage BackgroundColor="{DynamicResource BackgroundColor}" />
 </TabbedPage>

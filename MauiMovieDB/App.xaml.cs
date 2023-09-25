@@ -12,6 +12,7 @@ public partial class App : Application
         InitializeComponent();
 
         MainPage = loginPage;
+        
     }
 
     protected override void OnStart()

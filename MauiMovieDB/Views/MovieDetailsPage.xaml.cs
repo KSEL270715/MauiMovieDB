@@ -9,14 +9,14 @@ public partial class MovieDetailsPage : ContentPage
     public MovieDetailsPage()
     {
         InitializeComponent();
-         _viewModel = Application.Current.MainPage.Handler.MauiContext.Services.GetService<MovieDetailsViewModel>();
+        // _viewModel = Application.Current.MainPage.Handler.MauiContext.Services.GetService<MovieDetailsViewModel>();
     }
     protected async override void OnAppearing()
     {
         base.OnAppearing();
        //_viewModel = this.BindingContext as MovieDetailsViewModel;
-        await _viewModel.LoadDetails(_viewModel.ID);
-        this.BindingContext = _viewModel;
+       // await _viewModel.LoadDetails(_viewModel.ID);
+       // this.BindingContext = _viewModel;
     }
 
 }

@@ -6,6 +6,7 @@
     xmlns:converters="clr-namespace:MauiMovieDB.Converters"
     xmlns:viewModels="clr-namespace:MauiMovieDB.ViewModels"
     Title="Popular"
+    x:Name="popular"
     BackgroundColor="#202020">
     <ContentPage.Resources>
         <converters:ImagePathConverter
@@ -29,7 +30,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame
-                        BackgroundColor="Transparent"
+                        BackgroundColor="{DynamicResource Transparent }"
                         WidthRequest="160"
                         HeightRequest="230"
                         BorderColor="Gray"
@@ -51,7 +52,7 @@
                                 HeightRequest="20"
                                 FontAttributes="Bold"
                                 Text="{Binding Title}"
-                                TextColor="#FFFFFF"
+                                TextColor="{DynamicResource WhiteColor }"
                                 FontSize="16"
                                 HorizontalOptions="CenterAndExpand"
                                 LineBreakMode="WordWrap"
@@ -63,7 +64,7 @@
                                 HorizontalOptions="End"
                                 VerticalOptions="End"
                                 FontFamily="FA-S"
-                                TextColor="#FFFFFF"
+                                TextColor="{DynamicResource WhiteColor }"
                                 Text="&#xf006;">
                                 <Label.Triggers>
                                     <DataTrigger
@@ -72,7 +73,7 @@
                                         Value="True">
                                         <Setter
                                             Property="TextColor"
-                                            Value="Orange" />
+                                            Value="{DynamicResource BorderColor}" />
                                     </DataTrigger>
                                     <DataTrigger
                                         TargetType="Label"
@@ -80,14 +81,10 @@
                                         Value="False">
                                         <Setter
                                             Property="TextColor"
-                                            Value="#FFFFFF" />
+                                            Value="{DynamicResource WhiteColor }" />
                                     </DataTrigger>
                                 </Label.Triggers>
                             </Label>
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer
-                                    Tapped="TapGestureRecognizer_Tapped" />
-                            </Grid.GestureRecognizers>
                         </Grid>
                         <Frame.Triggers>
                             <DataTrigger
@@ -107,6 +104,11 @@
                                     Value="Gray" />
                             </DataTrigger>
                         </Frame.Triggers>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.SelectPopularMovieCommand, Source={x:Reference popular} }"
+                                                  CommandParameter="{Binding .}"/>
+
+                        </Frame.GestureRecognizers>
                     </Frame>
 
 

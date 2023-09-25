@@ -10,10 +10,39 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
                 <ResourceDictionary>
                     <Color x:Key="WhiteColor">White</Color>
-                     <Color x:Key="BackgroundColor">#202020</Color>
-                     <Color x:Key="BorderColor">Orange</Color>
-                     <Color x:Key="ellipseCircle">Gray</Color>
-                     <Color x:Key="BlackColor">Black</Color>
+                    <Color x:Key="BackgroundColor">#202020</Color>
+                    <Color x:Key="BorderColor">Orange</Color>
+                    <Color x:Key="ellipseCircle">Gray</Color>
+                    <Color x:Key="BlackColor">Black</Color>
+                    <Color x:Key="LoginBackgroundColor">#0b1e2a</Color>
+                    <Color x:Key="Transparent">Transparent</Color>
+                    <Color x:Key="GrayBorder">Gray</Color>
+                    <Color x:Key="ProgressbarColor">Green</Color>
+                    <Color x:Key="MovieDetailsBackground">#1c1c1c</Color>
+                    <Style x:Key="DetailsLabel" TargetType="Label">
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+                        <Setter Property="FontSize" Value="20" />
+                    </Style>
+                    <Style x:Key="DetailsRowLabel" TargetType="Label">
+                        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+                        <Setter Property="FontSize" Value="16" />
+                    </Style>
+                    <Style x:Key="TtfLabel" TargetType="Label">
+                        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+                        <Setter Property="FontSize" Value="16" />
+                        <Setter Property="FontFamily" Value="FA-S" />
+                    </Style>
+                    <Style x:Key="LoginEntry" TargetType="Entry">
+                        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+                        <Setter Property="BackgroundColor" Value="{DynamicResource GrayBorder}" />
+                        <Setter Property="MinimumWidthRequest" Value="250" />
+                    </Style>
+                    <Style x:Key="LoginButton" TargetType="Button">
+                        <Setter Property="BorderColor" Value="{DynamicResource BorderColor}" />
+                        <Setter Property="BackgroundColor" Value="{DynamicResource BlackColor}" />
+                        <Setter Property="TextColor" Value="{DynamicResource White}" />
+                    </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

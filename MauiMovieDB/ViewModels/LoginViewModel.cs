@@ -11,7 +11,7 @@ namespace MauiMovieDB.ViewModels
     {
         private readonly ILoginService _loginService;
         private readonly INavigationService _navigationService;
-        private string _userName;//= "Kalaiselvan0727";
+        private string _userName= "Kalaiselvan0727";
         public string UserName
         {
             get { return _userName; }
@@ -22,7 +22,7 @@ namespace MauiMovieDB.ViewModels
             }
 
         }
-        private string _password;//= "Kalaiselvan@123";
+        private string _password= "Kalaiselvan@123";
         public string Password
         {
             get { return _password; }

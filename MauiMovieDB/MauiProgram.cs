@@ -56,7 +56,7 @@ public static class MauiProgram
     {
         mauiAppBuilder.Services.AddSingleton(typeof(LoginPage));
         mauiAppBuilder.Services.AddSingleton(typeof(DashboardPage));
-        mauiAppBuilder.Services.AddTransient(typeof(MovieDetailsPage));
+        mauiAppBuilder.Services.AddSingleton(typeof(MovieDetailsPage));
     }
 }
 

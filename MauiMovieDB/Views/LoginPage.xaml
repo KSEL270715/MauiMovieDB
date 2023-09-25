@@ -9,7 +9,7 @@
     x:DataType="viewmodels:LoginViewModel">
 
     <Grid
-        BackgroundColor="#0b1e2a">
+        BackgroundColor="{DynamicResource LoginBackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition
                 Height="60*" />
@@ -38,30 +38,27 @@
             Margin="20,0,0,0" />
         <Entry
             Grid.Row="2"
-            TextColor="{DynamicResource WhiteColor}"
-            BackgroundColor="Gray"
+            Style="{DynamicResource LoginEntry}"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Center"
             Placeholder="Username"
-            MinimumWidthRequest="250"
             Text="{Binding UserName}" />
         <Entry
             Grid.Row="3"
-            TextColor="{DynamicResource WhiteColor}"
-            BackgroundColor="Gray"
+            Style="{DynamicResource LoginEntry}"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Center"
             Placeholder="Password"
             IsPassword="True"
-            MinimumWidthRequest="250"
             Text="{Binding Password}" />
         <Button
             Grid.Row="4"
-            BorderColor="{DynamicResource BorderColor}"
-            BackgroundColor="{DynamicResource BlackColor}"
+            Style="{DynamicResource LoginButton}"
+            CornerRadius="8"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Center"
-            MinimumWidthRequest="100"
+            WidthRequest="150"
+            HeightRequest="40"
             Text="Login"
             Command="{Binding LoginCommand}" />
     </Grid>

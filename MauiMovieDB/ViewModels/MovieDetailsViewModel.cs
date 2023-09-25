@@ -12,7 +12,17 @@ namespace MauiMovieDB.ViewModels
     {
         private readonly IAPIService _iAPIService;
         private readonly ISecurityService _securityService;
-        public int? ID { get; set; }
+
+        private int? _id;
+        public int? ID
+        {
+            get { return _id; }
+            set
+            {
+                _id = value;
+                OnPropertyChanged(nameof(ID));
+            }
+        }
         private string _title;
         public string Title
         {
@@ -114,8 +124,8 @@ namespace MauiMovieDB.ViewModels
                 OnPropertyChanged(nameof(CastList));
             }
         }
-        private bool _isFavourite;
-        public bool IsFavourite
+        private bool? _isFavourite;
+        public bool? IsFavourite
         {
             get { return _isFavourite; }
             set
@@ -140,7 +150,7 @@ namespace MauiMovieDB.ViewModels
                 {
                     MediaType = "movie",
                     MediaId = id.Value,
-                    Favorite = !IsFavourite
+                    Favorite = !(IsFavourite.Value)
                 };
 
                 string endPoint = "/account/" + _securityService.AccountID + "/favorite?session_id=" + _securityService.SessionID;
@@ -153,12 +163,15 @@ namespace MauiMovieDB.ViewModels
         }
         public async override Task LoadDetails(object param = null)
         {
-            int? id = param as int?;
-            ID = id;
-            var MovieDetails = await _iAPIService.GetRequestAsync<MovieDetails>(AppConstants.GetMovieDetails + "/" + id);
-            var castDetails = await _iAPIService.GetRequestAsync<CastModel>(AppConstants.GetMovieDetails + "/" + id + "/credits");
+            Dictionary<string, object> keyValuePairs = param as Dictionary<string, object>;
+            ID = keyValuePairs["id"] as int?;
+            IsFavourite = keyValuePairs["fav"] as bool?;
+            var MovieDetails = await _iAPIService.GetRequestAsync<MovieDetails>(AppConstants.GetMovieDetails + "/" + ID);
+            var castDetails = await _iAPIService.GetRequestAsync<CastModel>(AppConstants.GetMovieDetails + "/" + ID + "/credits");
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
+                ID = keyValuePairs["id"] as int?;
+                IsFavourite = keyValuePairs["fav"] as bool?;
                 Title = MovieDetails.Title;
                 MovieBackdropPath = MovieDetails.MovieBackdropPath;
                 ReleasedYearMovie = MovieDetails.ReleasedYearMovie;
