@@ -34,6 +34,8 @@
 	</PropertyGroup>
 	<ItemGroup>
 	  <MauiImage Remove="Resources\Images\pic.png" />
+	  <MauiImage Remove="Resources\Images\pic.png" />
+	  <MauiImage Remove="Resources\Images\pic.png" />
 	</ItemGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -120,6 +122,8 @@
 	  <BundleResource Include="Resources\Images\pic.png" />
 	  <BundleResource Include="Resources\Images\pic.png" />
 	  <BundleResource Include="Resources\Images\pic.png" />
+	  <BundleResource Include="Resources\Images\pic.png" />
+	  <BundleResource Include="Resources\Images\pic.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiSplashScreen Include="Resources\Splash\splash.png" />
@@ -129,5 +133,14 @@
 	    <Generator>PublicResXFileCodeGenerator</Generator>
 	    <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Resources.Designer.cs">
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 </Project>

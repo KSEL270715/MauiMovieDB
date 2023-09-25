@@ -4,8 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MauiMovieDB.Views.TrendingMoviesPage"
     xmlns:converters="clr-namespace:MauiMovieDB.Converters"
+    xmlns:resources="clr-namespace:MauiMovieDB"
     xmlns:viewModels="clr-namespace:MauiMovieDB.ViewModels"
-    Title="Trending"
+    Title="{x:Static resources:Resources.trending}"
     x:Name="trending"
     BackgroundColor="#202020">
     <ContentPage.Resources>

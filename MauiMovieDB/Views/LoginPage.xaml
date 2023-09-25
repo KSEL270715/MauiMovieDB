@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewmodels="clr-namespace:MauiMovieDB.ViewModels"
-    xmlns:strings="clr-namespace:MauiMovieDB.Resources"
+    xmlns:resources="clr-namespace:MauiMovieDB"
     x:Class="MauiMovieDB.Views.LoginPage"
     Title="LoginPage"
     x:DataType="viewmodels:LoginViewModel">
@@ -31,7 +31,8 @@
             Aspect="AspectFill" />
         <Label
             Grid.Row="1"
-            Text="Login"
+            Text="{x:Static resources:Resources.login}"
+            TextColor="{DynamicResource WhiteColor}"
             HorizontalOptions="Start"
             VerticalOptions="Center"
             FontAttributes="Bold"
@@ -41,7 +42,7 @@
             Style="{DynamicResource LoginEntry}"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Center"
-            Placeholder="Username"
+            Placeholder="{x:Static resources:Resources.username}"
             Text="{Binding UserName}" />
         <Entry
             Grid.Row="3"
@@ -59,7 +60,7 @@
             VerticalOptions="Center"
             WidthRequest="150"
             HeightRequest="40"
-            Text="Login"
+            Text="{x:Static resources:Resources.login}"
             Command="{Binding LoginCommand}" />
     </Grid>
 </ContentPage>

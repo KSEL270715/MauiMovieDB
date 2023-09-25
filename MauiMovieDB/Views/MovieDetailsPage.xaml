@@ -4,12 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="MauiMovieDB.Views.MovieDetailsPage"
     xmlns:converter="clr-namespace:MauiMovieDB.Converters"
-    Title="MovieDetails"
+    xmlns:resources="clr-namespace:MauiMovieDB"
+    Title="{x:Static resources:Resources.moviedetails}"
     BackgroundColor="{DynamicResource BackgroundColor}">
     <ContentPage.Resources>
         <converter:PercentageConverter
             x:Key="percentageConverter" />
-
     </ContentPage.Resources>
     <Grid
         VerticalOptions="FillAndExpand"
